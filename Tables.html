@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Tables</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="app-logo">Weather App</div>
+      <ul class="menu">
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a href="Tables.html">Tables</a></li>
+      </ul>
+    </div>
+
+   <!-- HTML for the forecast table -->
+<div id="table-container">
+    <table id="forecast-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Temperature</th>
+          <th>Condition</th>
+        </tr>
+      </thead>
+      <tbody id='table-body' >
+        <!-- Forecast data will be injected here -->
+      </tbody>
+    </table>
+    <div id="pagination"></div>
+  </div>
+  
+      <!-- Loader (Hidden by default) -->
+      <div id="wifi-loader" style="display: none;">
+        <svg viewBox="0 0 86 86" class="circle-outer">
+          <circle r="40" cy="43" cx="43" class="back"></circle>
+          <circle r="40" cy="43" cx="43" class="front"></circle>
+          <circle r="40" cy="43" cx="43" class="new"></circle>
+        </svg>
+        <div data-text="Searching" class="text"></div>
+      </div>
+    </div>
+  </div>
+
+  
+</body>
+</html>

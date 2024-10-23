@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="app-logo">Weather App</div>
+      <ul class="menu">
+        <li><a href="#">Dashboard</a></li>
+        <li><a href="Tables.html">Tables</a></li>
+      </ul>
+    </div>
+     
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="header">
+        <input type="text" id="search-city" placeholder="Search City..." />
+        <input type="text" id="search-lat" placeholder="Latitude" />
+        <input type="text" id="search-lon" placeholder="Longitude" />
+        <div class="user-profile">User Profile</div>
+      </div>
+
+      <!-- Weather Widget -->
+      <div id="weather-widget" class="weather-widget">
+        <h2>Weather Data Based on City</h2>
+        <div id="weather-details"></div>
+        <!-- Loader (Initially hidden) -->
+        <div id="wifi-loader" style="display: none;">
+          <svg viewBox="0 0 86 86" class="circle-outer">
+            <circle r="40" cy="43" cx="43" class="back"></circle>
+            <circle r="40" cy="43" cx="43" class="front"></circle>
+            <circle r="40" cy="43" cx="43" class="new"></circle>
+          </svg>
+          <div data-text="Searching" class="text"></div>
+        </div>
+      </div>
+
+      <!-- Chart Section -->
+      <div class="charts">
+        <div>
+          <canvas id="temp-bar-chart"></canvas>
+        </div>
+        <div>
+          <canvas id="weather-doughnut-chart"></canvas>
+        </div>
+        <div>
+          <canvas id="temp-line-chart"></canvas>
+        </div>
+      </div>
+
+      <!-- HTML for the forecast table -->
+      <div id="table-container">
+        <div class="table-controls">
+          <button id="sort-asc-btn">Sort Ascending</button>
+          <button id="sort-desc-btn">Sort Descending</button>
+          <button id="filter-rain-btn">Show Days With Rain</button>
+          <button id="highest-temp-btn">Show Highest Temperature</button>
+        </div>
+
+        <table id="forecast-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Temperature</th>
+              <th>Condition</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+            <!-- Forecast data will be injected here -->
+          </tbody>
+        </table>
+        <div id="pagination"></div>
+      </div>
+  
+      <!-- Chatbot Widget -->
+      <div class="chatbot">
+        <input id="chatbar" type="text" placeholder="Ask something..." />
+        <div id="chat-answer">Answer area for chatbot</div>
+      </div>
+    </div>
+  </div>
+ 
+  <!-- External JS libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+  <script src="cb.js"></script>
+</body>
+</html>
